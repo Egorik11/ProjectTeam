@@ -1,15 +1,19 @@
-import React from 'react'
-import PostItem from './PostItem/PostItem'
+import React, { useState, useEffect } from "react";
+import PostItem from "./PostItem/PostItem";
 
-export default function PostsList() {
+
+
+export default function PostsList({ posts }) {
+  const renderPosts = () => {
+    const showPost = posts.map((post) => {
+      return <PostItem key={post.id} title={post.title} body={post.body} />;
+    });
+    return showPost;
+  };
+
   return (
     <div className="uk-grid uk-child-width-1-2@s uk-child-width-1-3@m">
-      <PostItem />
-      <PostItem />
-      <PostItem />
-      <PostItem />
-      <PostItem />
-      <PostItem />
+      {renderPosts()}
     </div>
-  )
+  );
 }
