@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PostItem from "./PostItem/PostItem";
 
-
-
 export default function PostsList({ posts }) {
   const renderPosts = () => {
     const showPost = posts.map((post) => {
