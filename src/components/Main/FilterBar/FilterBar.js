@@ -4,12 +4,12 @@ import SortFilter from './SortFilter/SortFilter'
 import LimitFilter from './LimitFilter/LimitFilter'
 import ViewToggle from './ViewToggle/ViewToggle'
 
-export default function FilterBar({filterPosts}) {
+export default function FilterBar({ handleLimitChange }) {
   return (
     <div className="uk-margin-medium-bottom uk-flex">
       <Search />
       <SortFilter />
-      <LimitFilter filterPosts={filterPosts}/>
+      <LimitFilter handleLimitChange={handleLimitChange}/>
       <ViewToggle />
     </div>
   )
